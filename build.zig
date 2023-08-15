@@ -8,14 +8,6 @@ pub fn build(b: *Build) void {
         .source_file = .{ .path = "src/main.zig" },
     });
 
-    const lib = b.addStaticLibrary(.{
-        .name = "cow_list",
-        .root_source_file = .{ .path = "src/main.zig" },
-        .target = target,
-        .optimize = optimize,
-    });
-    b.installArtifact(lib);
-
     var main_tests = b.addTest(.{
         .root_source_file = .{ .path = "src/main.zig" },
         .target = target,
