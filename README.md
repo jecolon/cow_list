@@ -1,6 +1,38 @@
 # cow_list
 cow_list provides a Copy-on-Write list / slice implementation for Zig.
 
+## Adding cow_list to your Project
+cow_list uses the Zig build system and official package manager, so integration is the same as any other Zig 
+module. To track the main development branch, in `build.zig.zon` add:
+
+```
+.dependencies = .{
+    .zigstr = .{
+        .url = "https://github.com/jecolon/cow_list/archive/refs/tags/v0.11.0.tar.gz",
+    },
+},
+```
+
+and in your `build.zig`:
+
+```
+const cow_list = b.dependency("cow_list", .{
+    .target = target,
+    .optimize = optimize,
+});
+
+// exe, lib, tests, etc.
+exe.addModule("cow_list", cow_list.module("cow_list"));
+```
+
+When yu now try to build your project, the compiler will produce a hash mismatch error, indicating
+the hash that you should add to `build.zig.zon` to make the build work.
+
+To see available tags click [here](https://github.com/jecolon/cow_list/tags) and when you click
+on a tag name, you'll see the link to the `tar.gz` file under **Assets**.
+
+With all this, you can now `@import("cow_list")` in your project.
+
 ## Usage Example
 
 ```zig
