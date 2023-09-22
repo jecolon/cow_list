@@ -1,7 +1,8 @@
 # cow_list
 ## ⚠️ Attention! cow_list has moved to Codeberg!
-Visit the repo at: https://codeberg.org/dude_the_builder/cow_list and update your dependencies! This GitHub 
-repo will be deleted on September 30, 2023 11:59 PM (AST-4).
+Visit the repo at: https://codeberg.org/dude_the_builder/cow_list and update your dependencies! The source code 
+on this GitHub repo will be removed on September 30, 2023 11:59 PM (AST-4), leaving only instructions on how to
+find the project on Codeberg.org and integrate it into your project.
 
 cow_list provides a Copy-on-Write list / slice implementation for Zig.
 
